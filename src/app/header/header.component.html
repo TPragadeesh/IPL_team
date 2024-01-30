@@ -1,0 +1,29 @@
+<nav class="nav" [style.backgroundColor]="bcolor">
+    <h1><a routerLink="">IPL Teams</a></h1>
+    
+    <div  *ngIf="menuType==='default'" class="nav-search">
+        <input type="text" #searchInput placeholder="Enter Player Name" (blur)="hideSearch()" (keyup)="searchPlayer($event)"/>
+        <button (click)="submitSearch(searchInput.value)">Search</button>
+        <ul class="suggested-search" *ngIf="searchResult">
+            <li *ngFor="let player of searchResult">
+                <a (mousedown)="redirectTo(player.playerName)" >{{player.playerName}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div [ngSwitch]="menuType">
+        <ul *ngSwitchCase="'default'">
+            <li><a routerLink="">Home</a></li>
+            <li><a routerLink="manager-auth">Team Manager</a></li>
+            
+        </ul>
+
+        <ul *ngSwitchCase="'manager'">
+            <li><a routerLink="manager-add-product">Add Team Player</a></li>
+            <li><a routerLink="manager-home/{{teamName}}">Team Players</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+            <li><a href="#">{{teamName | titlecase}}</a></li>
+        </ul>
+    </div>
+    
+</nav>

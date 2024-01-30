@@ -1,0 +1,8 @@
+.add-product h3 {
+    font-family: montserrat;
+    display: inline-block;
+    padding-top: 40px;
+}
+.add-product {
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+<div class="product-list">
+    <h1 [style.backgroundColor]="bcolor">Player List</h1>
+    <p class="message-p">{{playerMessage}}</p>
+    <table class="content-table" >
+        <thead>
+            <tr [style.backgroundColor]="bcolor">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Auction Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of playerList">
+                <td><img src="{{item.image}}"></td>
+                <td>{{item.playerName}}</td>    
+                <td>{{item.auctionPrice}}</td>
+                <td>{{item.category}}</td>
+                <td>
+                    <button [style.backgroundColor]="bcolor" (click)="deletePlayer(item.playerName, item.team)">Delete</button>
+                    <button  [style.backgroundColor]="bcolor" routerLink="/manager-update-product/{{item.playerName}}">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+<div class="add-product">
+    <h3>ADD NEW PLAYER</h3>
+    <p class="message-p">{{addPlayerMessage}}</p>
+    <form #addPlayer="ngForm" (ngSubmit)="submit(addPlayer.value)" class="common-form">
+
+        <input type="text" class="form-input" placeholder="Enter Player Name" name="playerName" ngModel />
+
+        <input type="text" class="form-input" placeholder="Enter Auction Price" name="auctionPrice" ngModel />
+
+        <input type="text" class="form-input" placeholder="Enter Player Category" name="category" ngModel />
+
+        <input type="text" class="form-input" placeholder="Enter Player Status" name="status" ngModel />
+
+        <textarea type="text" class="form-input" placeholder="Enter Player strength" name="strength" ngModel ></textarea>
+
+        <textarea type="text" class="form-input" placeholder="Enter Player weakness" name="weakness" ngModel ></textarea>
+
+        <input type="text" class="form-input" placeholder="Enter Player Image URL" name="image" ngModel />
+
+        <button class="form-button">Add Player</button>
+    </form>
+</div>

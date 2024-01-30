@@ -1,0 +1,24 @@
+<div class="update-product">
+    <h3>UPDATE PLAYER</h3>
+    <p class=".message-p">{{playerMessage}}</p>
+    <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+
+        <input type="text" class="form-input" placeholder="Enter Player Name" name="name" ngModel="{{playerData?.playerName}}" />
+
+        <input type="text" class="form-input" placeholder="Enter Player Price" name="auctionPrice" ngModel="{{playerData?.auctionPrice}}" />
+
+        <input type="text" class="form-input" placeholder="Enter Player Category" name="category" ngModel="{{playerData?.category}}" />
+
+        <input type="text" class="form-input" placeholder="Enter Player status" name="status" ngModel="{{playerData?.status}}" />
+
+        <input type="text" class="form-input" placeholder="Enter Player Team" name="team" ngModel="{{playerData?.team}}" />
+
+        <textarea type="text" class="form-input" placeholder="Enter Player strength" name="strength" ngModel="{{playerData?.strength}}" ></textarea>
+
+        <textarea type="text" class="form-input" placeholder="Enter Player weakness" name="weakness" ngModel="{{playerData?.weakness}}" ></textarea>
+        
+        <input type="text" class="form-input" placeholder="Enter Player Image URL" name="image" ngModel="{{playerData?.image}}" />
+
+        <button class="form-button">Update Player</button>
+    </form>
+</div>

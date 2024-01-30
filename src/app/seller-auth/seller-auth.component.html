@@ -1,0 +1,40 @@
+<div class="seller-auth">
+    <div *ngIf="!showLogin" class="sign-up">
+        <h1>Manager Sign-Up</h1>
+        <p class="error-p">{{authError}}</p>
+        <form class="common-form" #managerSignUp = "ngForm" (ngSubmit)="submitSignUpForm(managerSignUp.value)">
+
+            <input class="form-input" type="text" name="teamName" #name="ngModel" placeholder="Enter Team Name" required ngModel/>
+            <p *ngIf="name.invalid && name.touched" style="color: red;">Please enter a team name</p>
+            
+            <input class="form-input" type="password" name="password" #password="ngModel" placeholder="Enter Password" required minlength="6" ngModel/>
+            <p *ngIf="password.invalid && password.touched" style="color: red;">Please enter valid password</p>
+
+            <input class="form-input" type="text" name="image"  placeholder="Enter Image link" required ngModel/>
+
+            <input class="form-input" type="text" name="color"  placeholder="Enter color for team" required ngModel/>
+            
+            <button [disabled]="managerSignUp.invalid" class="form-button">SignUp</button>
+            
+            <a class="auth-toggle-link" (click)="openLogin()">Already have an account? Click for Login</a>
+            
+        </form>
+    </div>
+
+    <div *ngIf="showLogin" class="login">
+        <h1>Manager Login</h1>
+        <form class="common-form" #managerLogin = "ngForm" (ngSubmit)="submitLoginForm(managerLogin.value)">
+
+            <input class="form-input" type="text" name="teamName" placeholder="Enter Team Name" #name="ngModel"  required ngModel/>
+            <p *ngIf="name.invalid && name.touched" style="color: red;">Please enter a team name</p>
+            
+            <input class="form-input" type="password" name="password" #password="ngModel" placeholder="Enter Password" required minlength="6" ngModel/>
+            <p *ngIf="password.invalid && password.touched" style="color: red;">Please enter valid password</p>
+            
+            
+            <button [disabled]="managerLogin.invalid" class="form-button">Login</button>
+            
+            <a class="auth-toggle-link" (click)="openSignUp()">Don't have account? Click for Sign-Up</a>
+        </form>
+    </div>
+</div>
