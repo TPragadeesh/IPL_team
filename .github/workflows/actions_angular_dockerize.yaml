@@ -23,4 +23,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: pragadeesht/front-end:latest
+          tags: pragadeesht/front-end1:latest
